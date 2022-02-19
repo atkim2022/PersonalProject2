@@ -28,7 +28,7 @@ At a high level the High Score Tracker in the following way:
 
 ### Flowchart
 
-![High Score Tracker High Level](../images/HighScoreTracker-Flowchart.png)
+![High Score Tracker High Level](images/Overview.png)
 
 ## Methods
 
@@ -47,7 +47,7 @@ name and the second column is the players score. This method loads the file and
 extracts the second column into a `List<int>`.
 
 
-![GetRandomWord](../images/HighScoreTracker-LoadScoreValues.png)
+![GetRandomWord](images/LoadScore.png)
 
 1. Check to see if the specified filename exists.
 2. If it does not, throw an exception stating the file cannot be loaded
@@ -64,7 +64,7 @@ This is a helper method which, given a score string of the format "name score",
 extracts the score value from the second column, parses it into an int value,
 and finally returns it.
 
-![GetScoreValue](../images/HighScoreTracker-GetScoreValue.png)
+![GetScoreValue](images/GetScore.png)
 
 1. Split the specified score string into two strings using `' '` as a delimiter
 2. Store the result in a variable called `parts`
@@ -76,7 +76,7 @@ and finally returns it.
 Given a list of score values and a newScore to insert into the high scores
 table, returns the index where the new score should be inserted.
 
-![Find Insertion Point](../images/HighScoreTracker-FindInsertionPoint.png)
+![Find Insertion Point](images/FindInsertion.png)
 
 1. Initialize a counter variable, insertAt, to 0.
 2. Loop through each value in values
@@ -93,7 +93,7 @@ Given the name, score, insertion location, and a list of strings containing the
 current high scores, inserts the name and score at the specified location. Then
 writes the results to "scores.txt".
 
-![Add Score](../images/HighScoreTracker-AddScore.png)
+![Add Score](images/AddScore.png)
 
 1. Create a string variable `entry` which will be the new row to add to the high
    score list.
