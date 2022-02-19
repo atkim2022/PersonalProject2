@@ -1,0 +1,15 @@
+/Users/Austin/Documents/GitHub/PersonalProject2/bin/Debug/net5.0/PersonalProject2.deps.json
+/Users/Austin/Documents/GitHub/PersonalProject2/bin/Debug/net5.0/PersonalProject2.runtimeconfig.json
+/Users/Austin/Documents/GitHub/PersonalProject2/bin/Debug/net5.0/PersonalProject2.runtimeconfig.dev.json
+/Users/Austin/Documents/GitHub/PersonalProject2/bin/Debug/net5.0/PersonalProject2.dll
+/Users/Austin/Documents/GitHub/PersonalProject2/bin/Debug/net5.0/ref/PersonalProject2.dll
+/Users/Austin/Documents/GitHub/PersonalProject2/bin/Debug/net5.0/PersonalProject2.pdb
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.csproj.AssemblyReference.cache
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.AssemblyInfoInputs.cache
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.AssemblyInfo.cs
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.csproj.CoreCompileInputs.cache
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.dll
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/ref/PersonalProject2.dll
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.pdb
+/Users/Austin/Documents/GitHub/PersonalProject2/obj/Debug/net5.0/PersonalProject2.genruntimeconfig.cache
