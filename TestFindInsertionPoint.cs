@@ -7,7 +7,15 @@ namespace PersonalProject2
     {
         public static bool RunTest()
         {
-            return false;
+            List<int> values = Program.LoadScoreValues("scorestest.txt");
+            Program.FindInsertionPoint(values, 20);
+
+            if (insertAt != 2)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
