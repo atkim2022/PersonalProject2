@@ -39,7 +39,7 @@ namespace PersonalProject2
             }
 
         List<int> values2 = Program.LoadScoreValues("scorestest.txt");
-            if (values2[0] != 50) 
+            if (values2[1] != 50) 
             {
                 return false; 
             }
