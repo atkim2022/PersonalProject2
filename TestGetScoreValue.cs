@@ -7,14 +7,14 @@ namespace PersonalProject2
     {
         public static bool RunTest()
         {
-            int result = Program.GetScoreValue("Kim", 20);
+            int result = Program.GetScoreValue("Kim 20");
           
             if (result != 20) 
             {
                 return false; 
             }
 
-            int result2 = Program.GetScoreValue("Smith", 50);
+            int result2 = Program.GetScoreValue("Smith 50");
           
             if (result2 != 50) 
             {

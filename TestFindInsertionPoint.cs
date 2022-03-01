@@ -7,9 +7,12 @@ namespace PersonalProject2
     {
         public static bool RunTest()
         {
-            List<int> values = Program.LoadScoreValues("scorestest.txt");
-            Program.FindInsertionPoint(values, 20);
+            List<int> values = new List<int>();
+            values.Add(200);
+            values.Add(150);
+            values.Add(10);
 
+            int insertAt = Program.FindInsertionPoint(values, 20);
             if (insertAt != 2)
             {
                 return false;

@@ -7,11 +7,16 @@ namespace PersonalProject2
     {
         public static bool RunTest()
         {
-        List<int> scores = Program.LoadScoreValues(testscores.txt);
+        // List<int> scores = Program.LoadScoreValues("scorestest.txt");
+        List<string> scores = new List<string>();
+        scores.Add("Kim 870");
+        scores.Add("Kim 150");
+        scores.Add("Kim 60");
+
+        
         Program.AddScore("Smith", 200, 1, scores);
 
-        List<int> values = Program.LoadScoreValues("scorestest.txt");
-            if (values[1] != 200) 
+            if (scores[1] != "Smith 200") 
             {
                 return false; 
             }
