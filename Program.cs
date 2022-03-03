@@ -45,7 +45,16 @@ namespace PersonalProject2
             // For each line, use GetScoreValue to extract the second column as an int
             // Add the int to values
             // Return values
-            List<string> lines = File.ReadAllLines("scores.txt").ToList();
+            List<string> lines = file.ReadAllLines("scores.txt").ToList();
+            List<int> values;
+            throw new Exception ($"The file could not be loaded."); 
+
+            int K = 0;
+            while (K < LENGTH OF LIST LINES)
+            {
+                values.Add(lines[K]);
+                K++; 
+            }
             return values;
         }  
 
@@ -81,7 +90,15 @@ namespace PersonalProject2
             //      increment `insertAt` by 1 and continue.
             // 3. If we reach the end of the list, `insertAt` should be the length of the list
             //    so we return `insertAt`.
-            return -1;
+            int insertAt = 0;
+
+            while (newScore < values[insertAt])
+                {
+                    insertAt++;
+                    //NEDS TO EXIT WHEN NEW SCORE GREATER THAN. What if equal to? 
+                }
+         
+            return insertAt;
         }
 
         /// <summary>
@@ -94,6 +111,9 @@ namespace PersonalProject2
         /// <param name="scores"></param>
         public static void AddScore(string name, int score, int insertAt, List<string> scores)
         {
+            string entry;
+            entry = ($"{name} {score}");
+            scores[insertAt] = entry;
             // Create a string variable entry which will be the new row to add to the high score list.
             // Assign entry to be $"{name} {score}"
             // Insert entry into scores at the index insertAt
