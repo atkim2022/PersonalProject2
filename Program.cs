@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.IO; // Feedback (jcollard 2022-03-04): This line is necessary to load files (this is the Input/Output library)
-using System.Linq; // Feedback (jcollard 2022-03-04): This line is necessary to convert a file to a List
+using System.IO;
+using System.Linq; 
 
 namespace PersonalProject2
 {
@@ -10,10 +9,10 @@ namespace PersonalProject2
     {
         static void Main(string[] args)
         {
-            if (args.Length > 0 && args[0] == "test")
+            if (args.Length > 0 && args [0] == "test")
             {
                 TestAll();
-                return;
+                return;  
             }
         }
         public static void TestAll()
@@ -49,19 +48,20 @@ namespace PersonalProject2
             // Add the int to values
             // Return values
 
-            // Feedback(jcollard 2022-03-04): After adding the "using" lines at
-            // the top of the file, this now works
             List<string> lines = File.ReadAllLines("scores.txt").ToList(); 
-            List<int> values;
+            if (File.Exists(filename) == false)
+            {
             throw new Exception ($"The file could not be loaded."); 
+            }
 
+            List<int> values = new List<int>();
             int K = 0;
-            while (K < LENGTH OF LIST LINES) // Feedback(jcollard 2022-03-04): Try lines.Count
+            while (K < lines.Count) // Feedback(jcollard 2022-03-04): Try lines.Count
             {
                 // Feedback(jcollard 2022-03-04): You'll need to convert the
                 // line to an int value. Luckily, you have a method to do that
                 // -- GetScoreValue(lines[K])
-                values.Add(lines[K]); 
+                values.Add(GetScoreValue(lines[K])); 
                 K++; 
             }
             return values;
@@ -75,11 +75,14 @@ namespace PersonalProject2
         /// <returns>"value"</returns>
         public static int GetScoreValue(string score)
         {
+            string parts = score.Split(' ');
+            int result = int.Parse(parts[1]);
+
+            return result;
             // Split the specified score string into two strings using ' ' as a delimiter
             // Store the result in a variable called parts
             // Parse the second element as an int int.Parse(parts[1])
             // Return the result
-            return 2;
         }
         
         /// <summary>
@@ -100,13 +103,10 @@ namespace PersonalProject2
             // 3. If we reach the end of the list, `insertAt` should be the length of the list
             //    so we return `insertAt`.
             int insertAt = 0;
-
             while (newScore < values[insertAt])
-                {
-                    insertAt++;
-                    //NEDS TO EXIT WHEN NEW SCORE GREATER THAN. What if equal to? 
-                }
-         
+            {
+                insertAt++;
+            }
             return insertAt;
         }
 
@@ -122,15 +122,12 @@ namespace PersonalProject2
         {
             string entry;
             entry = ($"{name} {score}");
-            // Feedback(jcollard 2022-03-04): This will actually overwrite the
-            // value at that location (rather than insert it) Try
-            // scores.Insert(???, ???)
-            scores[insertAt] = entry; 
+            scores.Insert(insertAt, entry); 
+            return; 
             // Create a string variable entry which will be the new row to add to the high score list.
             // Assign entry to be $"{name} {score}"
             // Insert entry into scores at the index insertAt
             // Use File.WriteLines to write each line of the scores list to the file "scores.txt"
-            return; 
         }
     }
 }
