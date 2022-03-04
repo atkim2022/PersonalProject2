@@ -104,7 +104,7 @@ namespace PersonalProject2
             //    so we return `insertAt`.
             int insertAt = 0;
             while (newScore < values[insertAt])
-            {
+            { // need to redo this method
                 insertAt++;
             }
             return insertAt;
