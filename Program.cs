@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using System.IO; // Feedback (jcollard 2022-03-04): This line is necessary to load files (this is the Input/Output library)
+using System.Linq; // Feedback (jcollard 2022-03-04): This line is necessary to convert a file to a List
+
 namespace PersonalProject2
 {
     class Program
@@ -45,14 +48,20 @@ namespace PersonalProject2
             // For each line, use GetScoreValue to extract the second column as an int
             // Add the int to values
             // Return values
-            List<string> lines = file.ReadAllLines("scores.txt").ToList();
+
+            // Feedback(jcollard 2022-03-04): After adding the "using" lines at
+            // the top of the file, this now works
+            List<string> lines = File.ReadAllLines("scores.txt").ToList(); 
             List<int> values;
             throw new Exception ($"The file could not be loaded."); 
 
             int K = 0;
-            while (K < LENGTH OF LIST LINES)
+            while (K < LENGTH OF LIST LINES) // Feedback(jcollard 2022-03-04): Try lines.Count
             {
-                values.Add(lines[K]);
+                // Feedback(jcollard 2022-03-04): You'll need to convert the
+                // line to an int value. Luckily, you have a method to do that
+                // -- GetScoreValue(lines[K])
+                values.Add(lines[K]); 
                 K++; 
             }
             return values;
@@ -113,7 +122,10 @@ namespace PersonalProject2
         {
             string entry;
             entry = ($"{name} {score}");
-            scores[insertAt] = entry;
+            // Feedback(jcollard 2022-03-04): This will actually overwrite the
+            // value at that location (rather than insert it) Try
+            // scores.Insert(???, ???)
+            scores[insertAt] = entry; 
             // Create a string variable entry which will be the new row to add to the high score list.
             // Assign entry to be $"{name} {score}"
             // Insert entry into scores at the index insertAt
