@@ -38,17 +38,7 @@ namespace PersonalProject2
         /// <returns>"values"</returns>
         public static List<int> LoadScoreValues(string filename)
         {
-         
-            // Check to see if the specified filename exists.
-            // If it does not, throw an exception stating the file cannot be loaded
-            // Load the file as a List and store it in a variable named, "lines"
-            // Create a List called values.
-            // Loop through each line
-            // For each line, use GetScoreValue to extract the second column as an int
-            // Add the int to values
-            // Return values
-
-            List<string> lines = File.ReadAllLines("scores.txt").ToList(); 
+            List<string> lines = File.ReadAllLines(filename).ToList(); 
             if (File.Exists(filename) == false)
             {
             throw new Exception ($"The file could not be loaded."); 
@@ -58,13 +48,18 @@ namespace PersonalProject2
             int K = 0;
             while (K < lines.Count) // Feedback(jcollard 2022-03-04): Try lines.Count
             {
-                // Feedback(jcollard 2022-03-04): You'll need to convert the
-                // line to an int value. Luckily, you have a method to do that
-                // -- GetScoreValue(lines[K])
                 values.Add(GetScoreValue(lines[K])); 
                 K++; 
             }
             return values;
+            // Check to see if the specified filename exists.
+            // If it does not, throw an exception stating the file cannot be loaded
+            // Load the file as a List and store it in a variable named, "lines"
+            // Create a List called values.
+            // Loop through each line
+            // For each line, use GetScoreValue to extract the second column as an int
+            // Add the int to values
+            // Return values
         }  
 
         /// <summary>
@@ -75,9 +70,8 @@ namespace PersonalProject2
         /// <returns>"value"</returns>
         public static int GetScoreValue(string score)
         {
-            string parts = score.Split(' ');
+            List<string> parts = score.Split(' ').ToList();
             int result = int.Parse(parts[1]);
-
             return result;
             // Split the specified score string into two strings using ' ' as a delimiter
             // Store the result in a variable called parts
@@ -94,6 +88,12 @@ namespace PersonalProject2
         /// <returns>"insertAt"</returns>
         public static int FindInsertionPoint(List<int> values, int newScore)
         {
+            int insertAt = 0;
+            while (newScore < values[insertAt])
+            { 
+                insertAt++;
+            }
+            return insertAt;
             // 1. Initialize a counter variable, insertAt, to 0.
             // 2. Loop through each value in values
             //    * If the new score is greater than the current value, we should insert above
@@ -102,12 +102,6 @@ namespace PersonalProject2
             //      increment `insertAt` by 1 and continue.
             // 3. If we reach the end of the list, `insertAt` should be the length of the list
             //    so we return `insertAt`.
-            int insertAt = 0;
-            while (newScore < values[insertAt])
-            { // need to redo this method
-                insertAt++;
-            }
-            return insertAt;
         }
 
         /// <summary>

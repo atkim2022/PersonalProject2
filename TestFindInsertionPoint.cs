@@ -12,8 +12,8 @@ namespace PersonalProject2
             values.Add(150);
             values.Add(10);
 
-            int insertAt = Program.FindInsertionPoint(values, 20);
-            if (insertAt != 2)
+            int insertAt = Program.FindInsertionPoint(values, 170);
+            if (insertAt != 1)
             {
                 return false;
             }
