@@ -9,6 +9,23 @@ namespace PersonalProject2
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter your name and score in the format of 'name score'");
+            string newScore = Console.ReadLine();
+            string name = newScore.Split(" ")[0];
+
+            List<int> values = new List<int>();
+            values = LoadScoreValues("scores.txt");
+            List<string> rawValues = File.ReadAllLines("scores.txt").ToList(); 
+            int score = GetScoreValue(newScore);
+            int insertAt = FindInsertionPoint(values, score); 
+            AddScore(name, score, insertAt, rawValues);
+            
+            foreach (score in rawValues)
+            {
+                Console.WriteLine($"{name} {score}");
+            }
+
+
             if (args.Length > 0 && args [0] == "test")
             {
                 TestAll();
@@ -43,10 +60,9 @@ namespace PersonalProject2
             {
             throw new Exception ($"The file could not be loaded."); 
             }
-
             List<int> values = new List<int>();
             int K = 0;
-            while (K < lines.Count) // Feedback(jcollard 2022-03-04): Try lines.Count
+            while (K < lines.Count) 
             {
                 values.Add(GetScoreValue(lines[K])); 
                 K++; 

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq; 
 
 namespace PersonalProject2
 {
@@ -7,9 +9,6 @@ namespace PersonalProject2
     {
         public static bool RunTest()
         {
-
-            // try and catch for a file that doesn't exist
-            // then making sure the values in the file are the things that are being returned
         try
         {
             Program.LoadScoreValues("NotAFile.txt");
@@ -26,8 +25,7 @@ namespace PersonalProject2
             Program.LoadScoreValues("FakeFile.txt");
             Console.Error.WriteLine("Expected an exception from loading \"FakeFile.txt\"");
             return false;
-        }
-            
+        }  
         catch
         {
         }
