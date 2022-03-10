@@ -12,7 +12,6 @@ namespace PersonalProject2
             Console.WriteLine("Enter your name and score in the format of 'name score'");
             string newScore = Console.ReadLine();
             string name = newScore.Split(" ")[0];
-
             List<int> values = new List<int>();
             values = LoadScoreValues("scores.txt");
             List<string> rawValues = File.ReadAllLines("scores.txt").ToList(); 
