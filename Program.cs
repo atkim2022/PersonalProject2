@@ -19,32 +19,32 @@ namespace PersonalProject2
             int insertAt = FindInsertionPoint(values, score); 
             AddScore(name, score, insertAt, rawValues);
             
-            foreach (score in rawValues)
+            foreach (string value in rawValues)
             {
                 Console.WriteLine($"{name} {score}");
             }
 
 
-            if (args.Length > 0 && args [0] == "test")
-            {
-                TestAll();
-                return;  
-            }
+            // if (args.Length > 0 && args [0] == "test")
+            // {
+            //     TestAll();
+            //     return;  
+            // }
         }
-        public static void TestAll()
-        {
-            bool testLoadScoreValues = TestLoadScoreValues.RunTest();
-            Console.WriteLine($"Test LoadScoreValues(string filename): {testLoadScoreValues}");
+        // public static void TestAll()
+        // {
+        //     bool testLoadScoreValues = TestLoadScoreValues.RunTest();
+        //     Console.WriteLine($"Test LoadScoreValues(string filename): {testLoadScoreValues}");
 
-            bool testGetScoreValue = TestGetScoreValue.RunTest();
-            Console.WriteLine($"Test GetScoreValue(string score): {testGetScoreValue}");
+        //     bool testGetScoreValue = TestGetScoreValue.RunTest();
+        //     Console.WriteLine($"Test GetScoreValue(string score): {testGetScoreValue}");
 
-            bool testFindInsertionPoint = TestFindInsertionPoint.RunTest();
-            Console.WriteLine($"Test FindInsertionPoint(List<int> values, int newScore): {testFindInsertionPoint}");
+        //     bool testFindInsertionPoint = TestFindInsertionPoint.RunTest();
+        //     Console.WriteLine($"Test FindInsertionPoint(List<int> values, int newScore): {testFindInsertionPoint}");
 
-            bool testAddScore = TestAddScore.RunTest();
-            Console.WriteLine($"Test AddScore(string name, int score, int insertAt, List<string> scores): {testAddScore}");
-        }
+        //     bool testAddScore = TestAddScore.RunTest();
+        //     Console.WriteLine($"Test AddScore(string name, int score, int insertAt, List<string> scores): {testAddScore}");
+        // }
 
         /// <summary>
         /// The scores.txt file is stored in two columns. The first column is the players name and the second column is 
@@ -99,7 +99,7 @@ namespace PersonalProject2
         /// where the new score should be inserted.
         /// </summary>
         /// <param name="values"></param>
-        /// <param name="newScore"></param>
+        /// <param name="score"></param>
         /// <returns>"insertAt"</returns>
         public static int FindInsertionPoint(List<int> values, int newScore)
         {
