@@ -14,14 +14,15 @@ namespace PersonalProject2
             string name = newScore.Split(" ")[0];
             List<int> values = new List<int>();
             values = LoadScoreValues("scores.txt");
-            List<string> rawValues = File.ReadAllLines("scores.txt").ToList(); 
+            List<string> scores = File.ReadAllLines("scores.txt").ToList(); 
             int score = GetScoreValue(newScore);
             int insertAt = FindInsertionPoint(values, score); 
-            AddScore(name, score, insertAt, rawValues);
+            AddScore(name, score, insertAt, scores);
             
-            foreach (string value in rawValues)
+            foreach (string value in scores)
             {
-                Console.WriteLine($"{name} {score}");
+
+                Console.WriteLine($"{value}");
             }
 
 
@@ -104,7 +105,7 @@ namespace PersonalProject2
         public static int FindInsertionPoint(List<int> values, int newScore)
         {
             int insertAt = 0;
-            while (newScore < values[insertAt])
+            while (insertAt < values.Count && newScore > values[insertAt])
             { 
                 insertAt++;
             }
@@ -132,6 +133,7 @@ namespace PersonalProject2
             string entry;
             entry = ($"{name} {score}");
             scores.Insert(insertAt, entry); 
+            File.WriteAllLines("scores.txt", scores); 
             return; 
             // Create a string variable entry which will be the new row to add to the high score list.
             // Assign entry to be $"{name} {score}"
