@@ -1,0 +1,6 @@
+Joe 170
+Jack 200
+austin 200
+Smith 250
+Ryan 570
+kim 10000
